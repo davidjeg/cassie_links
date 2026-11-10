@@ -71,6 +71,8 @@ export default function Home() {
                   autoPlay
                   muted
                   loop
+                  playsInline
+                  disablePictureInPicture
                 >
                   <source src="/main.mp4" type="video/mp4"></source>
                 </video>
