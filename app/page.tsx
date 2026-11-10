@@ -72,6 +72,7 @@ export default function Home() {
                   muted
                   loop
                   playsInline
+                  webkit-playsinline="true"
                   disablePictureInPicture
                 >
                   <source src="/main.mp4" type="video/mp4"></source>
