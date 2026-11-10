@@ -1,7 +1,23 @@
+"use client";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import SocialMedia from "./components/SocialMedia";
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      video.muted = true;
+
+      video.play().catch((error) => {
+        console.log("Autoplay prevented:", error);
+      });
+    }
+  }, []);
+
   return (
     <div className="relative min-h-dvh">
       {/* BACKGROUND */}
@@ -67,13 +83,14 @@ export default function Home() {
                 className="h-80 overflow-hidden rounded-xl col-span-2 relative"
               >
                 <video
+                  ref={videoRef}
                   className="w-full h-full object-cover object-[0%_30%]"
                   autoPlay
                   muted
                   loop
                   playsInline
-                  disablePictureInPicture
                   preload="auto"
+                  disablePictureInPicture
                 >
                   <source src="/main.mp4" type="video/mp4"></source>
                 </video>
