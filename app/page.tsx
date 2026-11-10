@@ -1,23 +1,7 @@
-"use client";
-import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import SocialMedia from "./components/SocialMedia";
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-
-    if (video) {
-      video.muted = true;
-
-      video.play().catch((error) => {
-        console.log("Autoplay prevented:", error);
-      });
-    }
-  }, []);
-
   return (
     <div className="relative min-h-dvh">
       {/* BACKGROUND */}
@@ -25,6 +9,7 @@ export default function Home() {
         <Image
           alt="background"
           fill
+          sizes="100vw"
           src={"/avatar.jpg"}
           className="absolute inset-0  object-cover object-[0%_30%]"
         />
@@ -42,6 +27,7 @@ export default function Home() {
               <Image
                 fill
                 src={"/hero.jpg"}
+                sizes="(max-width: 576px) 100vw, 576px"
                 alt="main-img"
                 className="object-cover object-[0%_65%]"
               />
@@ -82,18 +68,14 @@ export default function Home() {
                 href="https://fansly.com/cassierbn"
                 className="h-80 overflow-hidden rounded-xl col-span-2 relative"
               >
-                <video
-                  ref={videoRef}
-                  className="w-full h-full object-cover object-[0%_30%]"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  disablePictureInPicture
-                >
-                  <source src="/main.mp4" type="video/mp4"></source>
-                </video>
+                <Image
+                  src={"/video.gif"}
+                  alt="video-gif"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 66vw"
+                  className="object-contain"
+                />
+
                 <div className="absolute top-4 left-4 p-2 bg-gray-50 rounded-full ">
                   <Image
                     alt="fansly-icon"
