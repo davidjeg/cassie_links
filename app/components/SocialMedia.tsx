@@ -7,7 +7,7 @@ const socialMedia = [
   {
     name: "Tiktok",
     icon: "./icons/tik-tok.png",
-    url: "https://tiktok.com/@tuya_mor12",
+    url: "https://tiktok.com/@cassiierbn",
   },
   {
     name: "Twitter",
@@ -15,14 +15,9 @@ const socialMedia = [
     url: "https://x.com/cassierbn",
   },
   {
-    name: "E-Pal",
-    icon: "./icons/epal.png",
-    url: "https://www.epal.gg/@1531736674",
-  },
-  {
-    name: "Discord",
-    icon: "./icons/discord.png",
-    url: "https://discord.com/users/cassierbn",
+    name: "Instagram",
+    icon: "./icons/instagram.png",
+    url: "https://www.instagram.com/cass_13s6",
   },
 ];
 export default function SocialMedia() {
