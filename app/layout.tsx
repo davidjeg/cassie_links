@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto } from "next/font/google";
+import AnimatedTitle from "./components/AnimatedTitle";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cassie Robin",
+  title: "@cassierbn",
   description: "Pagina de links de Cassie Robin",
 };
 
@@ -33,7 +34,10 @@ export default function RootLayout({
       lang="en"
       className={`${getRoboto.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <AnimatedTitle />
+        {children}
+      </body>
     </html>
   );
 }

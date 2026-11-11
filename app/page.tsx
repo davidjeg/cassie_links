@@ -1,20 +1,26 @@
 import Image from "next/image";
+import FuzzyText from "./components/FuzzyText";
 import Navbar from "./components/Navbar";
 import SocialMedia from "./components/SocialMedia";
+import MusicPlayer from "./components/Reproductor";
 export default function Home() {
   return (
     <div className="relative min-h-dvh">
-      {/* BACKGROUND */}
-      <div className="fixed inset-0 -z-10">
-        <Image
-          alt="background"
-          fill
-          sizes="100vw"
-          src={"/avatar.jpg"}
-          className="absolute inset-0  object-cover object-[0%_30%]"
-        />
-        <div className="absolute inset-0  backdrop-blur-xl z-0"></div>
-        <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.85)_100%)]" />
+      {/* BACKGROUND GLOBAL */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/background.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 backdrop-blur-xs" />
+
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.85)_100%)]" />
       </div>
       {/* Main CONTENT */}
       <div className="flex items-center flex-col justify-center h-full relative">
@@ -39,13 +45,13 @@ export default function Home() {
             justify-center gap-2"
               >
                 {/* Nombre */}
-                <div className="inline-flex items-baseline gap-1">
-                  <h1 className="text-3xl text-zinc-200 font-bold">Cassie</h1>
+                <div className="flex items-center gap-1 w-fit">
+                  <FuzzyText>Cassie</FuzzyText>
                   <Image
                     alt="verified-icon"
                     width={20}
                     height={20}
-                    className="translate-y-0.5"
+                    className="translate-y-0.5 shrink-0"
                     src={"/icons/verified.png"}
                   />
                 </div>
@@ -61,6 +67,8 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <MusicPlayer />
           <div className="p-4 mt-4">
             <div className="grid grid-cols-2 gap-y-2.5 gap-x-4  text-zinc-200">
               <a

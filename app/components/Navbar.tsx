@@ -21,8 +21,8 @@ export default function Navbar() {
   return (
     <nav
       style={{ opacity }}
-      className="fixed flex items-center gap-2 px-4  z-20 w-full max-w-xl h-12 top-0
-       duration-100 transition-opacity bg-zinc-900 text-zinc-200 font-semibold"
+      className="fixed flex items-center gap-2 px-4 z-20 w-full max-w-xl h-12 top-0
+  duration-100 transition-opacity bg-zinc-900 text-zinc-200 font-semibold"
     >
       <div className="w-8 h-8 rounded-full overflow-hidden relative">
         <Image
