@@ -121,16 +121,14 @@ export default function AudioPlayer() {
 
       {/* Welcome screen */}
       <div
-        className={`fixed inset-0 z-[999] flex flex-col items-center justify-center bg-zinc-700/10 backdrop-blur-xl transition-opacity duration-700 ${
+        onClick={handleEnter}
+        className={`fixed inset-0 z-[999] flex flex-col items-center justify-center bg-zinc-700/10 backdrop-blur-xl transition-opacity duration-700 cursor-pointer ${
           entered ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
-        <button
-          onClick={handleEnter}
-          className="text-white text-sm tracking-[0.3em] uppercase hover:opacity-50 transition-opacity"
-        >
+        <p className="text-white text-sm tracking-[0.3em] uppercase hover:opacity-50 transition-opacity">
           Click to continue
-        </button>
+        </p>
 
         {error && <p className="mt-4 text-xs text-red-400">{error}</p>}
       </div>

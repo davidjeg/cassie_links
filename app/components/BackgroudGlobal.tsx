@@ -25,21 +25,23 @@ export default function BackgroundGlobal() {
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-black">
       <video
         ref={videoRef}
         loop
         muted
         playsInline
         preload="auto"
-        className="w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       >
         <source src="/background.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 backdrop-blur-xs" />
+      {/* Blur */}
+      <div className="absolute inset-0 backdrop-blur-xs pointer-events-none" />
 
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.85)_100%)]" />
+      {/* Dark gradient */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.85)_100%)] pointer-events-none" />
     </div>
   );
 }
