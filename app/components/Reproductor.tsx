@@ -69,7 +69,12 @@ export default function AudioPlayer() {
         audio.currentTime = 0;
       }
 
+      // Reproducir música
       await audio.play();
+
+      // Reproducir background
+      window.dispatchEvent(new Event("play-background"));
+
       setEntered(true);
     } catch (err) {
       console.error(err);

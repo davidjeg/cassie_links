@@ -3,25 +3,13 @@ import FuzzyText from "./components/FuzzyText";
 import Navbar from "./components/Navbar";
 import SocialMedia from "./components/SocialMedia";
 import MusicPlayer from "./components/Reproductor";
+import BackgroundGlobal from "./components/BackgroudGlobal";
 export default function Home() {
   return (
     <div className="relative min-h-dvh">
       {/* BACKGROUND GLOBAL */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/background.mp4" type="video/mp4" />
-        </video>
+      <BackgroundGlobal />
 
-        <div className="absolute inset-0 backdrop-blur-xs" />
-
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.85)_100%)]" />
-      </div>
       {/* Main CONTENT */}
       <div className="flex items-center flex-col justify-center h-full relative">
         <Navbar />
